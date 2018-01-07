@@ -5,7 +5,7 @@ import nz.co.bnz.webdriver.WebDriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class ParkingCalculatorPage {
@@ -13,7 +13,12 @@ public class ParkingCalculatorPage {
     private WebDriver driver;
 
     public void open() {
-        driver = new FirefoxDriver(WebDriverUtils.getDesiredCapabilities());
+
+        if (System.getProperty("webdriver.chrome.driver") == null) {
+            System.setProperty("webdriver.chrome.driver", "C:/dev/bin/chromedriver_win32/chromedriver.exe");
+        }
+
+        driver = new ChromeDriver();
         driver.get("http://adam.goucher.ca/parkcalc/");
     }
 

@@ -1,4 +1,4 @@
 dependencies {
 	compile('junit:junit:4.11')
-	compile('org.seleniumhq.selenium:selenium-java:2.53.1')
+	compile('org.seleniumhq.selenium:selenium-java:3.8.1')
 }
