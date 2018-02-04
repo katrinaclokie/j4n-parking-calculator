@@ -16,4 +16,7 @@ public class WebDriverUtils {
         return (new WebDriverWait(driver, 60)).until(ExpectedConditions.textToBe(by, text));
     }
 
+    public static boolean waitForElementToHaveValue(WebDriver driver, By by, String value) {
+        return (new WebDriverWait(driver, 10)).until(ExpectedConditions.attributeContains(by, "value", value));
+    }
 }
